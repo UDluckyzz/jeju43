@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>제주 4·3 평화공원 현장체험 워크북</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Nanum+Myeongjo:wght@700&display=swap');
+    body { font-family: 'Noto Sans KR', sans-serif; }
+    .font-serif-kr { font-family: 'Nanum Myeongjo', serif; }
+  </style>
+</head>
+<body class="bg-stone-100 text-stone-800 min-h-screen pb-20">
+
+  <header class="bg-stone-900 text-white py-6 px-4 text-center border-b-4 border-red-700 shadow-md">
+    <div class="max-w-2xl mx-auto">
+      <span class="inline-block bg-red-800 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">현장체험 계기교육</span>
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">제주 4·3 평화공원 탐방 워크북</h1>
+      <p class="text-stone-400 text-sm mt-1">전시관의 이야기를 따라가며 역사의 진실을 채워보세요.</p>
+    </div>
+  </header>
+
+  <div class="sticky top-2 z-20 max-w-2xl mx-auto px-4 mt-3">
+    <div class="bg-stone-800/90 backdrop-blur text-white px-4 py-2 rounded-full shadow-lg flex items-center justify-between text-xs sm:text-sm">
+      <span class="flex items-center gap-1.5">
+        <span>💡</span> 남은 초성 힌트 기회:
+      </span>
+      <span class="font-bold text-amber-400 text-base" id="hint-count-display">5회 남음</span>
+    </div>
+  </div>
+
+  <main class="max-w-2xl mx-auto px-4 mt-5 space-y-8">
+
+    <!-- 1부 -->
+    <section class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-stone-200">
+      <div class="flex items-center gap-2 border-b pb-3 mb-4">
+        <span class="w-3 h-3 rounded-full bg-red-700"></span>
+        <h2 class="text-lg font-bold text-stone-900">1. 제주 4·3의 발발과 비극</h2>
+      </div>
+
+      <div class="space-y-4 text-sm leading-relaxed text-stone-700">
+        <div class="bg-stone-50 p-4 rounded-xl space-y-3">
+          <div>
+            1947년 3월 1일, 제주 시내에서 
+            <input type="text" id="q1" data-ans="3.1절 기념행사,3.1절 기념식,3.1절 기념대회,3·1절 기념행사,3·1절 기념식,3.1절대회" data-chosung="3.1ㅈ ㄱㄴㅎㅅ" placeholder="①" class="q-input w-28 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+            <button onclick="requestHint('q1')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+            <span id="hint-q1" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+            가 열렸고, 제주도민의 10분의 1이 참여했다.[cite: 1]
+          </div>
+          <div>
+            행사 후 귀가 중이던 
+            <input type="text" id="q2" data-ans="기마경찰,기마경관,기마 경찰" data-chosung="ㄱㅁㄱㅊ" placeholder="②" class="q-input w-28 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+            <button onclick="requestHint('q2')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+            <span id="hint-q2" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+            이 말을 타고 지나가다 아이를 치고 그냥 가자 시민들이 항의했다.[cite: 1]
+          </div>
+          <div>
+            경찰의 발포로 6명이 사망했고, 이에 항의하며 제주도 내 관공서와 학교, 회사 등 95%가 
+            <input type="text" id="q3" data-ans="총파업,3.10 총파업,민관총파업,3·10 총파업,3.10총파업" data-chosung="ㅊㅍㅇ (또는 3.10 ㅊㅍㅇ)" placeholder="③" class="q-input w-28 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+            <button onclick="requestHint('q3')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+            <span id="hint-q3" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+            에 동참했다.[cite: 1]
+          </div>
+        </div>
+
+        <div class="bg-stone-50 p-4 rounded-xl space-y-3">
+          <div>
+            1948년 단독 정부 수립을 위한 
+            <input type="text" id="q4" data-ans="5.10 총선거,5·10 총선거,총선거,5.10 단독선거,5.10선거" data-chosung="5.10 ㅊㅅㄱ" placeholder="④" class="q-input w-32 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+            <button onclick="requestHint('q4')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+            <span id="hint-q4" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+            를 앞두고 남북통일 정부를 염원하던 도민들의 반대가 이어졌고, 정부와 미군정의 가혹한 진압 작전이 시작되었다.[cite: 1]
+          </div>
+        </div>
+
+        <div class="bg-stone-50 p-4 rounded-xl space-y-3">
+          <div>
+            산으로 숨은 사람들을 이유로 '
+            <input type="text" id="q5" data-ans="도피자,도피" data-chosung="ㄷㅍㅈ" placeholder="⑤" class="q-input w-24 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+            <button onclick="requestHint('q5')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+            <span id="hint-q5" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+            가족은 죽여도 좋다'는 
+            <input type="text" id="q6" data-ans="대살,代殺" data-chosung="ㄷㅅ" placeholder="⑥" class="q-input w-20 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+            <button onclick="requestHint('q6')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+            <span id="hint-q6" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+            정책이 시행되었다.[cite: 1]
+          </div>
+          <div>
+            복순이 엄마는 
+            <input type="text" id="q7" data-ans="서북청년회,서청,서북청년단" data-chosung="ㅅㅂㅊㄴㅎ" placeholder="⑦" class="q-input w-28 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+            <button onclick="requestHint('q7')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+            <span id="hint-q7" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+            으로 이루어진 토벌대에 의해 목숨을 잃었다.[cite: 1]
+          </div>
+          <div>
+            7년 7개월간 이어진 학살로 실제로는 약 
+            <input type="text" id="q8" data-ans="3,2.5~3,2.5-3,2만5천~3,3만,2.5,2.5~3만" data-chosung="3 (또는 2.5~3)" placeholder="⑧" class="q-input w-28 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+            <button onclick="requestHint('q8')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+            <span id="hint-q8" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+            만 명이 넘는 무고한 민간인이 희생되었다.[cite: 1]
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2부 -->
+    <section class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-stone-200">
+      <div class="flex items-center gap-2 border-b pb-3 mb-4">
+        <span class="w-3 h-3 rounded-full bg-red-700"></span>
+        <h2 class="text-lg font-bold text-stone-900">2. 다랑쉬굴과 진실 규명</h2>
+      </div>
+
+      <div class="bg-stone-50 p-4 rounded-xl space-y-3 text-sm leading-relaxed text-stone-700">
+        <div>
+          1948년 12월 18일, 
+          <input type="text" id="q9" data-ans="9연대,제9연대,토벌대" data-chosung="9ㅇㄷ" placeholder="⑨" class="q-input w-24 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+          <button onclick="requestHint('q9')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+          <span id="hint-q9" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+          가 대토벌 작전을 시작하며 
+          <input type="text" id="q10" data-ans="종달리,종달" data-chosung="ㅈㄷㄹ" placeholder="⑩" class="q-input w-24 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+          <button onclick="requestHint('q10')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+          <span id="hint-q10" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+          마을을 불태웠고, 동굴에 숨어있던 무고한 주민들이 희생당했다.[cite: 1]
+        </div>
+        <div>
+          1992년 다랑쉬굴 유골 발굴로 진실이 드러났고, 2003년 
+          <input type="text" id="q11" data-ans="노무현" data-chosung="ㄴㅁㅎ" placeholder="⑪" class="q-input w-24 px-2 py-1 border rounded text-center font-bold text-stone-900 bg-white">
+          <button onclick="requestHint('q11')" class="text-xs bg-stone-200 hover:bg-stone-300 text-stone-700 px-2 py-1 rounded ml-1 transition">힌트</button>
+          <span id="hint-q11" class="text-xs text-red-600 font-bold ml-1 hidden"></span>
+          대통령은 국가 원수 최초로 공식 사과하였다.[cite: 1]
+        </div>
+      </div>
+
+      <div class="mt-4 flex justify-end">
+        <button id="check-answers-btn" class="bg-stone-900 hover:bg-stone-800 text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition shadow">
+          문제 채점하기
+        </button>
+      </div>
+      <div id="score-result" class="mt-3 text-sm font-bold text-center hidden"></div>
+    </section>
+
+    <!-- 3부 -->
+    <section class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-stone-200">
+      <div class="flex items-center gap-2 border-b pb-3 mb-4">
+        <span class="text-xl">🌺</span>
+        <h2 class="text-lg font-bold text-stone-900">4·3 희생자분들에게 드리는 위로와 약속의 편지[cite: 1]</h2>
+      </div>
+
+      <div id="letter-card" class="bg-[#fcfaf5] border-2 border-[#e6dfd1] rounded-2xl p-6 sm:p-8 relative overflow-hidden shadow-inner">
+        <div class="absolute -right-6 -bottom-6 text-stone-200/40 text-9xl select-none pointer-events-none">🌺</div>
+
+        <div class="border-b border-[#e2d9c8] pb-3 mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          <h3 class="font-serif-kr text-lg font-bold text-red-900 tracking-wider">평화와 기억의 편지</h3>
+          <div class="flex items-center gap-2">
+            <span class="text-xs text-stone-500 font-medium">작성자:</span>
+            <input id="writer-name" type="text" placeholder="학교 / 학년 / 이름" class="bg-white/80 border border-stone-300 rounded px-2 py-1 text-xs sm:text-sm font-medium focus:outline-red-800">
+          </div>
+        </div>
+
+        <div class="relative">
+          <textarea id="letter-content" rows="7" placeholder="제주 4·3 평화공원을 돌아보며 느낀 점, 희생자분들께 전하고 싶은 위로와 평화를 약속하는 다짐을 정성껏 적어보세요..." class="w-full bg-transparent border-0 text-stone-800 text-sm sm:text-base leading-relaxed resize-none focus:ring-0 outline-none font-serif-kr placeholder:font-sans placeholder:text-stone-400"></textarea>
+        </div>
+
+        <div class="mt-4 pt-3 border-t border-[#e2d9c8] flex justify-between items-center text-[11px] text-stone-500">
+          <span>제주 4·3 평화공원 현장체험학습</span>
+          <span id="letter-date">2026. 04. 03</span>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-col sm:flex-row items-end sm:items-center justify-between gap-2">
+        <span class="text-xs text-stone-500">※ 저장 후 하이클래스로 사진을 제출해 주세요.</span>
+        <button id="download-letter-btn" class="bg-red-800 hover:bg-red-900 text-white text-sm font-semibold px-6 py-3 rounded-xl transition shadow flex items-center gap-2">
+          <span>📸</span> 편지 갤러리 저장 (제출용)
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 모달 -->
+  <div id="hint-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-6 text-center shadow-2xl transform transition-all">
+      <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mx-auto mb-3">
+        💡
+      </div>
+      <h3 id="modal-title" class="text-lg font-bold text-stone-900 mb-2">힌트 사용 안내</h3>
+      <p id="modal-message" class="text-sm text-stone-600 mb-6 leading-relaxed"></p>
+      
+      <div id="modal-btn-group" class="flex gap-2">
+        <button id="modal-cancel-btn" class="flex-1 bg-stone-200 hover:bg-stone-300 text-stone-700 font-semibold py-2.5 rounded-xl transition">
+          취소
+        </button>
+        <button id="modal-confirm-btn" class="flex-1 bg-stone-900 hover:bg-stone-800 text-white font-semibold py-2.5 rounded-xl transition shadow">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let remainingHints = 5;
+    let pendingInputId = null;
+    const hintCountDisplay = document.getElementById('hint-count-display');
+    const hintModal = document.getElementById('hint-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalMessage = document.getElementById('modal-message');
+    const modalConfirmBtn = document.getElementById('modal-confirm-btn');
+    const modalCancelBtn = document.getElementById('modal-cancel-btn');
+
+    function requestHint(inputId) {
+      const hintSpan = document.getElementById(`hint-${inputId}`);
+      if (!hintSpan.classList.contains('hidden')) return;
+
+      if (remainingHints <= 0) {
+        modalTitle.textContent = "힌트 기회 소진";
+        modalMessage.innerHTML = "남은 힌트 기회(총 5회)를 모두 사용하셨습니다.<br>전시관 해설판을 직접 확인해보세요!";
+        pendingInputId = null;
+        modalCancelBtn.classList.add('hidden');
+        modalConfirmBtn.textContent = "확인";
+        hintModal.classList.remove('hidden');
+        return;
+      }
+
+      pendingInputId = inputId;
+      const willRemain = remainingHints - 1;
+      modalTitle.textContent = "초성 힌트 확인";
+      modalMessage.innerHTML = `힌트를 사용하시겠습니까?<br>확인을 누르면 초성이 표시되며,<br><strong class="text-red-600 font-bold">남은 힌트는 ${willRemain}회</strong>가 됩니다.`;
+      modalCancelBtn.classList.remove('hidden');
+      modalConfirmBtn.textContent = "확인";
+      hintModal.classList.remove('hidden');
+    }
+
+    modalCancelBtn.addEventListener('click', () => {
+      pendingInputId = null;
+      hintModal.classList.add('hidden');
+    });
+
+    modalConfirmBtn.addEventListener('click', () => {
+      hintModal.classList.add('hidden');
+
+      if (pendingInputId && remainingHints > 0) {
+        const input = document.getElementById(pendingInputId);
+        const hintSpan = document.getElementById(`hint-${pendingInputId}`);
+        const chosung = input.dataset.chosung;
+
+        hintSpan.textContent = `[초성: ${chosung}]`;
+        hintSpan.classList.remove('hidden');
+
+        remainingHints--;
+        hintCountDisplay.textContent = `${remainingHints}회 남음`;
+        if (remainingHints === 0) {
+          hintCountDisplay.classList.remove('text-amber-400');
+          hintCountDisplay.classList.add('text-red-400');
+        }
+        pendingInputId = null;
+      }
+    });
+
+    document.getElementById('check-answers-btn').addEventListener('click', () => {
+      const inputs = document.querySelectorAll('.q-input');
+      let correctCount = 0;
+
+      inputs.forEach(input => {
+        const acceptable = input.dataset.ans.split(',').map(s => s.trim().replace(/\s+/g, ''));
+        const userVal = input.value.trim().replace(/\s+/g, '');
+
+        if (userVal && acceptable.includes(userVal)) {
+          input.classList.remove('border-red-500', 'bg-red-50', 'text-red-800');
+          input.classList.add('border-emerald-500', 'bg-emerald-50', 'text-emerald-800');
+          correctCount++;
+        } else {
+          input.classList.remove('border-emerald-500', 'bg-emerald-50', 'text-emerald-800');
+          input.classList.add('border-red-500', 'bg-red-50', 'text-red-800');
+        }
+      });
+
+      const resBox = document.getElementById('score-result');
+      resBox.classList.remove('hidden');
+      if (correctCount === inputs.length) {
+        resBox.textContent = `🎉 축하합니다! 11문제를 모두 맞혔습니다.`;
+        resBox.className = "mt-3 text-sm font-bold text-center text-emerald-700";
+      } else {
+        resBox.textContent = `총 11문제 중 ${correctCount}문제 정답입니다. 빨간색 칸을 다시 살펴보세요!`;
+        resBox.className = "mt-3 text-sm font-bold text-center text-red-600";
+      }
+    });
+
+    const today = new Date();
+    document.getElementById('letter-date').textContent = `${today.getFullYear()}. ${String(today.getMonth()+1).padStart(2,'0')}. ${String(today.getDate()).padStart(2,'0')}`;
+
+    document.getElementById('download-letter-btn').addEventListener('click', () => {
+      const name = document.getElementById('writer-name').value.trim();
+      const content = document.getElementById('letter-content').value.trim();
+
+      if (!name) {
+        alert('작성자 이름(학교/학년/이름)을 입력해 주세요.');
+        document.getElementById('writer-name').focus();
+        return;
+      }
+      if (!content) {
+        alert('희생자분들께 전할 편지 내용을 작성해 주세요.');
+        return;
+      }
+
+      const card = document.getElementById('letter-card');
+
+      html2canvas(card, { scale: 2, backgroundColor: null }).then(canvas => {
+        const link = document.createElement('a');
+        const fileName = `4.3_추모편지_${name}.png`;
+        link.download = fileName;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        alert(`편지가 갤러리에 저장되었습니다!\n하이클래스에 사진을 업로드해 주세요.`);
+      }).catch(err => {
+        console.error(err);
+        alert('이미지 생성 중 오류가 발생했습니다.');
+      });
+    });
+  </script>
+</body>
+</html>
